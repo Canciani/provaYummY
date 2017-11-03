@@ -12,16 +12,22 @@ subject to an additional IP rights grant found at http://polymer.github.io/PATEN
 
 <dom-module id="my-view404">
   <template>
-    <style>
+    <style include="shared-styles">
       :host {
+        background-color: #eb9712;
         display: block;
-
-        padding: 10px 20px;
+        padding: 10px;
       }
     </style>
 
-    Oops you hit a 404. <a href="[[rootPath]]">Head back to home.</a>
+      <div align="center">
+        <!--<h1>Therapist</h1>-->
+        <img src = "/Users/francescocanciani/provaYummY/images/balloons.png" width="80" height="80" alt = "..." />
+      <img src = "/Users/francescocanciani/provaYummY/images/monster.png" width="180" height="180" alt = "..." />
+        <img src = "/Users/francescocanciani/provaYummY/images/balloons.png" width="80" height="80" alt = "..." />
+      </div>
   </template>
+
 
   <script>
     class MyView404 extends Polymer.Element {
