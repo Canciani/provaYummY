@@ -1,0 +1,51 @@
+<!--
+@license
+Copyright (c) 2016 The Polymer Project Authors. All rights reserved.
+This code may only be used under the BSD style license found at http://polymer.github.io/LICENSE.txt
+The complete set of authors may be found at http://polymer.github.io/AUTHORS.txt
+The complete set of contributors may be found at http://polymer.github.io/CONTRIBUTORS.txt
+Code distributed by Google as part of the polymer project is also
+subject to an additional IP rights grant found at http://polymer.github.io/PATENTS.txt
+-->
+<link rel="import" href="../bower_components/polymer/polymer-element.html">
+<input lang="en" x-webkit-speech>
+<meta http-equiv="Content-Language" content="en"/>
+
+<dom-module id="my-view404">
+  <template>
+    <style include="shared-styles">
+      :host {
+        display: block;
+        padding: 10px;
+      }
+    </style>
+
+      <div align="center">
+        <input type="text" x-webkit-speech speech />
+        <input x-webkit-speech>
+
+        <!--<h1>Therapist</h1>-->
+        <img src = "images/SphereGIF.gif" width="160" height="160" alt = "..." />
+        <img src = "images/Moon.gif" width="160" height="160" alt = "..." />
+      <!--  <img src = "images/balloons.png" width="80" height="80" alt = "..." />
+      <img src = "images/monster.png" width="180" height="180" alt = "..." />
+        <img src = "images/balloons.png" width="80" height="80" alt = "..." /> -->
+      </div>
+  </template>
+
+
+  <script>
+    class MyView404 extends Polymer.Element {
+      static get is() { return 'my-view404'; }
+      static get properties() {
+        return {
+          // This shouldn't be neccessary, but the Analyzer isn't picking up
+          // Polymer.Element#rootPath
+          rootPath: String,
+        };
+      }
+    }
+
+    window.customElements.define(MyView404.is, MyView404);
+  </script>
+</dom-module>
