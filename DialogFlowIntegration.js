@@ -2,8 +2,9 @@
 
 import {ApiAiClient} from "api-ai-javascript";
 
-const client = new ApiAiClient({accessToken: 'bea666998ce9493db5f3c1099a4c97d8'})
+const client = new ApiAiClient({accessToken: '982c1debdcc64933ae56fe87202e7430'})
 
 .textRequest('Hello!')
     .then((response) => {print("Prova effettuata con successo")})
     .catch((error) => {print("...Error...")})
+    
