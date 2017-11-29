@@ -1,5 +1,13 @@
-
- export var ApiAiConstants;
+/* La parola let permette che AVAILABLE_LANGUAGES venga solamente vista all'
+   interno del blocco racchiuso.
+   funzione anonima: (function (ApiAiConstants))
+                     (function (AVAILABLE_LANGUAGES).
+   Vengono utilizzate due IIFE Immediately Invoked function expression,
+   passandogli come parametri (ApiAiConstants || (ApiAiConstants = {})
+   Se proviamo ad assegnare un valore ad una proprietà non definita creiamo di
+  fatto questa proprietà inizializzandola con il valore assegnato:
+  ApiAiConstants.VERSION ecc... */
+export var ApiAiConstants;
 (function (ApiAiConstants) {
     let AVAILABLE_LANGUAGES;
     (function (AVAILABLE_LANGUAGES) {

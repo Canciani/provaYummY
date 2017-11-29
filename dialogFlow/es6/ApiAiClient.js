@@ -5,6 +5,10 @@ import { EventRequest } from "./Request/EventRequest";
 import TextRequest from "./Request/TextRequest";
 export * from "./Interfaces";
 export { ApiAiConstants } from "./ApiAiConstants";
+
+/* Viene dichiarata la classe ApiAiClient, il costruttore riceve in ingresso
+   come parametro options che dovrebbe contenere per un corretto funzionamento
+   l'acess token a DialogFlow*/
 export class ApiAiClient {
     constructor(options) {
         if (!options || !options.accessToken) {
@@ -16,6 +20,9 @@ export class ApiAiClient {
         this.apiBaseUrl = options.baseUrl || ApiAiConstants.DEFAULT_BASE_URL;
         this.sessionId = options.sessionId || this.guid();
     }
+    /*Metodo textRequest che crea una nuova TexRequest e la esegue tramite
+      .perform().
+      TextRequest estende la classe Request*/
     textRequest(query, options = {}) {
         if (!query) {
             throw new ApiAiClientConfigurationError("Query should not be empty");
@@ -23,6 +30,9 @@ export class ApiAiClient {
         options.query = query;
         return new TextRequest(this, options).perform();
     }
+    /*Metodo eventRequest che crea una nuovo EventRequest lo esegue tramite
+      .perform().
+      EventRequest estende la classe Request*/
     eventRequest(eventName, eventData = {}, options = {}) {
         if (!eventName) {
             throw new ApiAiClientConfigurationError("Event name can not be empty");
