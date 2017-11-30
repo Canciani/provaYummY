@@ -1,5 +1,6 @@
 <!-- Load the Polymer.Element base class -->
 <link rel="import" href="../bower_components/polymer/polymer-element.html">
+<link rel="import" href="bower_components/iron-flex-layout/iron-flex-layout-classes.html">
 <link rel="import" href="shared-styles.html">
 
 <dom-module id="my-new-view">
@@ -12,17 +13,22 @@
 
       :host {
         display: block;
+
+        padding: 10px;
+      }
+      .container {
+        @apply(--layout-horizontal);
+        @apply(--layout-center-justified);
       }
     </style>
 
     <!-- immagini e switch di pagina da Home a Chat-->
     <!-- TROVARE IL MODO DI ALLINEARE -->
-
-    <font class="bomb" size="7">YummY</font>
-    <img class="yummy" alt="" src = "images/YummYanimation.gif"
-      width = "187.5" height="152.5">
-    <div class="block">
-      <p>Type text here</p>
+    <div class="container">
+      <font class="bomb" size="7">YummY</font>
+      <img class="yummy" alt="" src = "images/YummYanimation.gif"
+        width = "187.5" height="152.5">
+      <div class="block"> <p>Type text here</p> </div>
     </div>
       <!-- PERMETTE DI LINKARE UN'IMMAGINE SE CLICCATA AD UNA PAGINA
       <iron-selector selected="[[page]]" attr-for-selected="name" class="drawer-list" role="navigation">
