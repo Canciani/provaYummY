@@ -83,13 +83,15 @@ subject to an additional IP rights grant found at http://polymer.github.io/PATEN
 
     <app-drawer-layout fullbleed narrow="{{narrow}}">
       <!-- Drawer content -->
+      <!-- AGGIUNGI QUI LE PAGINE PER POTERLE SELEZIONARE DAL MENU
+           <a> è un elemento ancora -->
       <app-drawer id="drawer" slot="drawer" swipe-open="[[narrow]]">
         <app-toolbar>Menu</app-toolbar>
         <iron-selector selected="[[page]]" attr-for-selected="name" class="drawer-list" role="navigation">
           <a name="view1" href="[[rootPath]]view1">Therapist</a>
           <a name="view2" href="[[rootPath]]view2">Parent</a>
           <a name="view3" href="[[rootPath]]view3">Ndd</a>
-          <a name="Home" href="[[rootPath]]home">Home</a>
+          <a name="new-view" href="[[rootPath]]new-view">New View</a>
         </iron-selector>
       </app-drawer>
 
@@ -105,7 +107,8 @@ subject to an additional IP rights grant found at http://polymer.github.io/PATEN
               <img src = "/Users/francescocanciani/provaYummY/images/balloons.png" width="60" height="60" alt = "..." />-->
           </app-toolbar>
         </app-header>
-
+<!-- PER AGGIUNGERE LE PAGINE AGGIUNGERLE QUI SOTTO
+     Visualizza la pagina selezionata e nasconde le altre -->
         <iron-pages
             selected="[[page]]"
             attr-for-selected="name"
@@ -114,6 +117,7 @@ subject to an additional IP rights grant found at http://polymer.github.io/PATEN
           <my-view1 name="view1"></my-view1>
           <my-view2 name="view2"></my-view2>
           <my-view3 name="view3"></my-view3>
+          <my-new-view name="new-view"></my-new-view>
           <my-view404 name="view404"></my-view404>
         </iron-pages>
       </app-header-layout>
