@@ -2,6 +2,7 @@
 
 <link rel="import" href="../bower_components/polymer/polymer-element.html">
 <link rel="import" href="bower_components/iron-flex-layout/iron-flex-layout-classes.html">
+<link rel="import" href="../iron-icons.html">
 
 <!-- shared styles for all views -->
 <dom-module id="shared-styles">
@@ -28,12 +29,40 @@
         line-height: 64px;
       }
 
+      textarea#styled {
+	      font-family: Tahoma, sans-serif;
+        background-color: #fff;
+        border-radius: 30px;
+        position: fixed;
+        top: 50%;
+        border: none;
+        padding-top: 1%;
+        padding-bottom: 1%;
+        padding-left: 15%;
+        padding-right: 15%;
+        color: #eb9712;
+        box-shadow: 0 4px 25px 0 rgba(0, 0, 0, 0.1);
+        resize: none;
+        outline: none;
+        text-align: center;
+        font-size: 15px;
+      }
+
+      #styled::placeholder {
+        color: #f5dabd;
+        padding-top: 4%;
+
+        padding-left: 15%;
+        padding-right: 15%;
+        text-align: center;
+
+      }
+
       .block {
         background-color: #fff;
         border-radius: 30px;
         position: fixed;
         top: 50%;
-
         padding-left: 15%;
         padding-right: 15%;
         color: #eb9712;
@@ -43,7 +72,8 @@
 
       .bomb {
         position: fixed;
-        top: 25%;
+        top: 10%;
+        font-size: 500%;
 
         color: #eb9712;
         font-family: bombfont;
@@ -51,7 +81,7 @@
 
       .yummy {
         position: fixed;
-        top: 35%;
+        bottom: 43%;
 
       }
 
@@ -64,6 +94,21 @@
       @font-face {
       font-family: bombfont;
       src: bombfont/BOMBFONT TRIAL.ttf;
+      }
+
+      .sendIt {
+        width: 32px;
+        height: 32px;
+        text-align: center;
+        color: #fff;
+        border-radius: 50%;
+        position: fixed;
+        top: 60%;
+        left: 80%;
+        box-shadow: 0 4px 25px 0 rgba(0, 0, 0, 0.1);
+        border: none;
+        resize: none;
+        outline: none;
       }
 
       h1 {

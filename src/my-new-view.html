@@ -1,6 +1,7 @@
 <!-- Load the Polymer.Element base class -->
 <link rel="import" href="../bower_components/polymer/polymer-element.html">
 <link rel="import" href="bower_components/iron-flex-layout/iron-flex-layout-classes.html">
+<link rel="import" href="../bower_components/paper-icon-button/paper-icon-button.html">
 <link rel="import" href="shared-styles.html">
 
 <dom-module id="my-new-view">
@@ -16,15 +17,43 @@
 
         padding: 10px;
       }
-      
+
+      paper-button.fancy {
+        background: white;
+        border-radius: 3px;
+        color: #f5dabd;
+        position: fixed;
+        top: 45%;
+        left: 90%;
+
+      }
+
+      paper-button.fancy:hover {
+        background: #eb9712;
+        color: white;
+      }
+
+      paper-button[disabled],
+      paper-button[toggles][active] {
+        background: red;
+      }
+
     </style>
 
     <div class="container">
-      <font class="bomb" size="7">YummY</font>
+      <font class="bomb">YummY</font>
       <img class="yummy" alt="" src = "images/YummYanimation.gif"
         width = "187.5" height="152.5">
-      <div class="block"> <p>Type text here</p> </div>
+      <textarea id="styled" placeholder="Type text here"></textarea>
+      <paper-button class="fancy">send</paper-button>
     </div>
+
+
+
+
+    <!-- old style button
+      <button class="sendIt "type="submit" onclick="saveMsg()"><img src="images/sentIt.png" width="12px"
+        height="12px" align="center"></button>-->
       <!-- PERMETTE DI LINKARE UN'IMMAGINE SE CLICCATA AD UNA PAGINA
       <iron-selector selected="[[page]]" attr-for-selected="name" class="drawer-list" role="navigation">
         <a name="view1" href="[[rootPath]]view1">
@@ -40,6 +69,13 @@
     }
     //Now, register your new custom element so the browser can use it
     customElements.define(MyNewView.is, MyNewView);
+  </script>
+
+  <script>
+    function saveMsg() {
+        alert("cliccato!");
+    }
+
   </script>
 
 <!-- Cambiare immagine al click!
