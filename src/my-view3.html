@@ -75,7 +75,26 @@ subject to an additional IP rights grant found at http://polymer.github.io/PATEN
         outline: none;
       }
 
+      button.avatar{
+        width: 40px;
+        height: 40px;
+        text-align: center;
+        background-color: #eb9712;
+        color: #fff;
+        border-radius: 50%;
+        position: absolute;
+        bottom: 5px;
+        right: 5px;
+        paddin
+        box-shadow: 0 4px 25px 0 rgba(0, 0, 0, 0.1);
+        border: none;
+        resize: none;
+        outline: none;
+      }
+
+
     </style>
+    <p id="bbb"><p>
     <div class="container">
       <div class="avatar container">
         <div width="100%">
@@ -83,15 +102,27 @@ subject to an additional IP rights grant found at http://polymer.github.io/PATEN
         </div>
       </div>
       <div class="avatar container">
-          <textarea class="avatar" placeholder="Type text here"></textarea>
+          <textarea id="aaa" class="avatar" placeholder="Type text here"></textarea>
       </div>
       <div class="avatar half container">
-          <input class="avatar" value="Send" type=”button” src=”images/sentButton.png” border=”0″/>
+          <!--input id="myBtn" class="avatar" type=”button” value="Send" onclick="myFunction()"/-->
+          <button id="myBtn" class="avatar" type=”button” on-tap="handleTap">Send</button>
       </div>
     </div>
   </template>
 
   <script>
+    Polymer({
+      is: 'my-view3',
+
+      handleTap: function() {
+        if(this.$.aaa.value!="")
+        alert(this.$.aaa.value);
+      }
+
+    });
+
+
     class MyView3 extends Polymer.Element {
       static get is() { return 'my-view3'; }
     }
