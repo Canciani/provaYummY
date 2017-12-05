@@ -8,10 +8,10 @@ class WebApp {
         this.name = name;
 
         this.options = {
-            "accessToken": "c684ae05d13a4e3fa2a823b2ca86b9a1",
+            "accessToken": "b0ae17fcc4264c5ca234291847fa3609",
             "lang": "IT",
             //Non credo sia corretto il baseUrl inserito!
-            "baseUrl": "https://console.dialogflow.com/api-client/#/editAgent/24667f0c-80d2-4871-8d13-62e10b4fc45e/"
+            "baseUrl": "https://api.dialogflow.com/v1/"
         };
 
         this.apiaiClient = new ApiAiClient(this.options);
