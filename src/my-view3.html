@@ -106,8 +106,8 @@ subject to an additional IP rights grant found at http://polymer.github.io/PATEN
 
     </style>
     <div class="container">
-      <div class="bgcolor"></div>
-      <font class="bomb">YummY</font>
+      <div class="bgcolor" id="secondaryColor"></div>
+      <font class="bomb" id="title">YummY</font>
       <div id="yummy" class="avatar container">
         <div width="100%">
           <img alt="" src = "images/YummYanimation.gif" width = "187.5" height="152.5">
@@ -130,10 +130,17 @@ subject to an additional IP rights grant found at http://polymer.github.io/PATEN
 
       handleTap: function() {
         if(this.$.request.value!=""){
+        //Invio del dato a dialogFlow
           alert(this.$.request.value);
-          this.$.yummy.style.bottom = '10px';
-          this.$.textarea.style.bottom = '10px';
-          this.$.button.style.bottom = '10px';
+        //Sistemazione dello schermo aggiungere che viene applicato solamente
+        //la prima volta
+          this.$.yummy.remove();
+          this.$.textarea.style.bottom = '30px';
+          this.$.button.style.bottom = '30px';
+          this.$.request.value = "";
+          this.$.secondaryColor.remove();
+          this.$.title.remove();
+
         }
       }
 
