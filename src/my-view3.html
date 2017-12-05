@@ -9,12 +9,7 @@ subject to an additional IP rights grant found at http://polymer.github.io/PATEN
 -->
 
 <link rel="import" href="../bower_components/polymer/polymer-element.html">
-<link rel="import" href="bower_components/iron-flex-layout/iron-flex-layout-classes.html">
-<!--<link rel="import" href="../bower_components/paper-icon-button/paper-icon-button.html">-->
-<link rel="import" href="../iron-icons/iron-icons.html">
-
 <link rel="import" href="shared-styles.html">
-<link rel="import" href="/src/myicons.html">
 
 <dom-module id="my-view3">
   <template>
@@ -30,6 +25,14 @@ subject to an additional IP rights grant found at http://polymer.github.io/PATEN
       div.avatar {
         position: absolute;
         bottom: 30%;
+        width: 100%;
+      }
+
+      div.bgcolor{
+        position: absolute;
+        background-color: #fff;
+        height: 33%;
+        bottom: 0px;
         width: 100%;
       }
 
@@ -56,7 +59,7 @@ subject to an additional IP rights grant found at http://polymer.github.io/PATEN
 
       .avatar::placeholder {
         color: #f5dabd;
-        padding-top: 15px;
+        padding-top: 0px;
         padding-left: 15%;
         padding-right: 15%;
         text-align: center;
@@ -100,6 +103,7 @@ subject to an additional IP rights grant found at http://polymer.github.io/PATEN
     </style>
     <p id="bbb"><p>
     <div class="container">
+      <div class="bgcolor"></div>
       <font class="bomb">YummY</font>
       <div id="yummy" class="avatar container">
         <div width="100%">
@@ -111,8 +115,9 @@ subject to an additional IP rights grant found at http://polymer.github.io/PATEN
       </div>
       <div id="button" class="avatar half container">
           <!--input id="myBtn" class="avatar" type=”button” value="Send" onclick="myFunction()"/-->
-          <button id="myBtn" class="avatar" type=”button” on-tap="handleTap"> <iron-icon icon="myicons:send"></iron-icon></button>
+          <button id="myBtn" class="avatar" type=”button” on-tap="handleTap">Send</button>
       </div>
+
     </div>
   </template>
 
