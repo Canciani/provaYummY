@@ -10,6 +10,10 @@ subject to an additional IP rights grant found at http://polymer.github.io/PATEN
 
 <link rel="import" href="../bower_components/polymer/polymer-element.html">
 <link rel="import" href="shared-styles.html">
+<link rel="import" href="../iron-icons/iron-icons.html">
+
+<link rel="import" href="shared-styles.html">
+<link rel="import" href="/src/myicons.html">
 
 <dom-module id="my-view3">
   <template>
@@ -101,7 +105,6 @@ subject to an additional IP rights grant found at http://polymer.github.io/PATEN
 
 
     </style>
-    <p id="bbb"><p>
     <div class="container">
       <div class="bgcolor"></div>
       <font class="bomb">YummY</font>
@@ -111,11 +114,11 @@ subject to an additional IP rights grant found at http://polymer.github.io/PATEN
         </div>
       </div>
       <div id="textarea" class="avatar container">
-          <textarea id="aaa" class="avatar" placeholder="Type text here"></textarea>
+          <textarea id="request" class="avatar" placeholder="Type text here"></textarea>
       </div>
       <div id="button" class="avatar half container">
           <!--input id="myBtn" class="avatar" type=”button” value="Send" onclick="myFunction()"/-->
-          <button id="myBtn" class="avatar" type=”button” on-tap="handleTap">Send</button>
+          <button id="myBtn" class="avatar" type=”button” on-tap="handleTap"><iron-icon icon="myicons:send"></iron-icon></button>
       </div>
 
     </div>
@@ -126,8 +129,8 @@ subject to an additional IP rights grant found at http://polymer.github.io/PATEN
       is: 'my-view3',
 
       handleTap: function() {
-        if(this.$.aaa.value!=""){
-          alert(this.$.aaa.value);
+        if(this.$.request.value!=""){
+          alert(this.$.request.value);
           this.$.yummy.style.bottom = '10px';
           this.$.textarea.style.bottom = '10px';
           this.$.button.style.bottom = '10px';
