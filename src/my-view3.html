@@ -115,7 +115,7 @@ subject to an additional IP rights grant found at http://polymer.github.io/PATEN
 
       div.rowsx{
         width: 100%;
-        
+
       }
 
       div.yummychat {
@@ -198,7 +198,7 @@ subject to an additional IP rights grant found at http://polymer.github.io/PATEN
           this.$.textarea.style.bottom = '30px';
           this.$.button.style.bottom = '30px';
 
-          //creo la riga;
+          //creo la riga bimbo;
           var childrow  = document.createElement("div");
           childrow.setAttribute("class", "rowdx");
           //creo il messaggio del bimbo
@@ -212,6 +212,21 @@ subject to an additional IP rights grant found at http://polymer.github.io/PATEN
           childmsg.appendChild(childtext);
           childrow.appendChild(childmsg);
           this.$.chat.appendChild(childrow);
+
+          //creo la riga yummy;
+          var yummyrow  = document.createElement("div");
+          yummyrow.setAttribute("class", "rowsx");
+          //creo il messaggio del bimbo
+          var yummymsg  = document.createElement("div");
+          yummymsg.setAttribute("class", "yummychat");
+          //creo il testo
+          var yummytext  = document.createElement("p");
+          yummytext.setAttribute("class", "paddingtesto");
+          //append
+          yummytext.innerHTML = this.$.request.value;
+          yummymsg.appendChild(yummytext);
+          yummyrow.appendChild(yummymsg);
+          this.$.chat.appendChild(yummyrow);
           //remove part
           this.$.request.value = "";
           this.$.secondaryColor.remove();
