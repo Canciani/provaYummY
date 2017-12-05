@@ -11,27 +11,236 @@ subject to an additional IP rights grant found at http://polymer.github.io/PATEN
 <link rel="import" href="../bower_components/polymer/polymer-element.html">
 <link rel="import" href="shared-styles.html">
 
+<link rel="import" href="../bower_components/polymer/polymer-element.html">
+<link rel="import" href="shared-styles.html">
+<link rel="import" href="../iron-icons/iron-icons.html">
+
+<link rel="import" href="shared-styles.html">
+<link rel="import" href="/src/myicons.html">
+
 <dom-module id="my-view2">
   <template>
     <style include="shared-styles">
       :host {
         display: block;
-
-        padding: 10px;
       }
-    </style>
 
-    <div class="card" align="center">
-      <div class="circle">T</div>
-      <h1>Trofei</h1>
-      <p>
-        <img src = "images/Trophy.png" width="171.5" height="168.75" alt = "..." />
-      </p>
-      <p>Punti totali: 720</p>
+      .bomb1{
+        background-color: #fff;
+      }
+
+      div.avatar {
+        position: absolute;
+        bottom: 30%;
+        width: 100%;
+      }
+
+      div.bgcolor{
+        position: absolute;
+        background-color: #eb9712;
+        height: 34%;
+        bottom: 0px;
+        width: 100%;
+      }
+
+      div.half {
+        width: 50%;
+      }
+
+      textarea.avatar {
+	      font-family: Tahoma, sans-serif;
+        background-color: #fff;
+        border-radius: 30px;
+        position: absolute;
+        bottom: 0px;
+        width: 50%;
+        height: 50px;
+        border: none;
+        color: #eb9712;
+        box-shadow: 0 4px 25px 0 rgba(0, 0, 0, 0.1);
+        resize: none;
+        outline: none;
+        text-align: center;
+        font-size: 15px;
+      }
+
+      .avatar::placeholder {
+        color: #f5dabd;
+        padding-top: 15px;
+        padding-left: 15%;
+        padding-right: 15%;
+        text-align: center;
+
+
+      }
+
+      input.avatar{
+        width: 40px;
+        height: 40px;
+        text-align: center;
+        background-color: #eb9712;
+        color: #fff;
+        border-radius: 50%;
+        position: absolute;
+        bottom: 5px;
+        right: 5px;
+        box-shadow: 0 4px 25px 0 rgba(0, 0, 0, 0.1);
+        border: none;
+        resize: none;
+        outline: none;
+      }
+
+      button.avatar{
+        width: 40px;
+        height: 40px;
+        text-align: center;
+        background-color: #eb9712;
+        color: #fff;
+        border-radius: 50%;
+        position: absolute;
+        bottom: 7px;
+        right: 5px;
+        box-shadow: 0 4px 25px 0 rgba(0, 0, 0, 0.1);
+        border: none;
+        resize: none;
+        outline: none;
+      }
+
+      div#chat{
+        width:80%;
+
+      }
+
+      div.rowdx{
+        width: 100%;
+      }
+
+      div.rowsx{
+        width: 100%;
+
+      }
+
+      div.yummychat {
+	      font-family: Tahoma, sans-serif;
+        background-color: #eb9712;
+        border-radius: 30px;
+        width: 40%;
+        border: none;
+        color: #fff;
+        box-shadow: 0 4px 25px 0 rgba(0, 0, 0, 0.1);
+        text-align: left;
+        font-size: 15px;
+        margin-top: 10px;
+        margin-bottom: 10px;
+        margin-right: 60%;
+      }
+
+      div.childchat {
+	      font-family: Tahoma, sans-serif;
+        background-color: #fff;
+        border-radius: 30px;
+        position: relative;
+        width: 40%;
+        border: none;
+        color: #eb9712;
+        box-shadow: 0 4px 25px 0 rgba(0, 0, 0, 0.1);
+        text-align: left;
+        font-size: 15px;
+        margin-top: 10px;
+        margin-bottom: 10px;
+        margin-left: 60%;
+      }
+
+      .paddingtesto{
+        padding-top: 5px;
+        padding-bottom: 5px;
+        padding-left: 25px;
+        padding-right: 25px;
+      }
+
+    </style>
+    <div class="container">
+      <div class="bgcolor" id="secondaryColor"></div>
+      <font class="bomb" id="title">YummY</font>
+      <div id="yummy" class="avatar container">
+        <div width="100%">
+          <img alt="" src = "images/YummYanimation.gif" width = "187.5" height="152.5">
+        </div>
+      </div>
+      <div id="textarea" class="avatar container">
+          <textarea id="request" class="avatar" placeholder="Type text here"></textarea>
+      </div>
+      <div id="button" class="avatar half container">
+          <!--input id="myBtn" class="avatar" type=”button” value="Send" onclick="myFunction()"/-->
+          <button id="myBtn" class="avatar" type=”button” on-tap="handleTap"><iron-icon icon="myicons:send"></iron-icon></button>
+      </div>
+    </div>
+    <div> <img alt="" src = "images/YummYanimation.gif" width = "40" height="40"></div>
+
+    <div class="container">
+      <div id="chat">
+        <!--
+        <div class="rowdx"><div class="childchat"><p class="paddingtesto">Ciao sono il bambino</p></div></div>
+        <div class="rowsx"><div class="yummychat"><p class="paddingtesto">Ciao sono yummy</p></div></div>
+        -->
+      </div>
     </div>
   </template>
 
   <script>
+    Polymer({
+      is: 'my-view2',
+
+      handleTap: function() {
+        if(this.$.request.value!=""){
+        //Invio del dato a dialogFlow
+        //alert(this.$.request.value);
+        //Sistemazione dello schermo aggiungere che viene applicato solamente
+        //la prima volta
+          this.$.yummy.remove();
+          this.$.textarea.style.bottom = '30px';
+          this.$.button.style.bottom = '30px';
+
+          //creo la riga bimbo;
+          var childrow  = document.createElement("div");
+          childrow.setAttribute("class", "rowdx");
+          //creo il messaggio del bimbo
+          var childmsg  = document.createElement("div");
+          childmsg.setAttribute("class", "childchat");
+          //creo il testo
+          var childtext  = document.createElement("p");
+          childtext.setAttribute("class", "paddingtesto");
+          //append
+          childtext.innerHTML = this.$.request.value;
+          childmsg.appendChild(childtext);
+          childrow.appendChild(childmsg);
+          this.$.chat.appendChild(childrow);
+
+          //creo la riga yummy;
+          var yummyrow  = document.createElement("div");
+          yummyrow.setAttribute("class", "rowsx");
+          //creo il messaggio del bimbo
+          var yummymsg  = document.createElement("div");
+          yummymsg.setAttribute("class", "yummychat");
+          //creo il testo
+          var yummytext  = document.createElement("p");
+          yummytext.setAttribute("class", "paddingtesto");
+          //append
+          yummytext.innerHTML = this.$.request.value;
+          yummymsg.appendChild(yummytext);
+          yummyrow.appendChild(yummymsg);
+          this.$.chat.appendChild(yummyrow);
+          //remove part
+          this.$.request.value = "";
+          this.$.secondaryColor.remove();
+          this.$.title.remove();
+
+        }
+      }
+
+    });
+
+
     class MyView2 extends Polymer.Element {
       static get is() { return 'my-view2'; }
     }
