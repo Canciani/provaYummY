@@ -103,6 +103,59 @@ subject to an additional IP rights grant found at http://polymer.github.io/PATEN
         outline: none;
       }
 
+      div#chat{
+        width:90%;
+      }
+
+      div.rowdx{
+        width: 100%;
+        background-color: #ddd;
+        border: solid 3px green;
+      }
+      div.rowsx{
+        width: 100%;
+        align-content: left;
+        background-color: #ddd;
+      }
+
+      div.yummychat {
+	      font-family: Tahoma, sans-serif;
+        background-color: #eb9712;
+        border-radius: 30px;
+        position: relative;
+        width: 50%;
+        border: none;
+        color: #fff;
+        box-shadow: 0 4px 25px 0 rgba(0, 0, 0, 0.1);
+        text-align: left;
+        align: left;
+        font-size: 15px;
+        margin-top: 10px;
+        margin-bottom: 10px;
+      }
+
+      div.childchat {
+	      font-family: Tahoma, sans-serif;
+        background-color: #fff;
+        border-radius: 30px;
+        position: relative;
+        width: 50%;
+        border: none;
+        color: #eb9712;
+        box-shadow: 0 4px 25px 0 rgba(0, 0, 0, 0.1);
+        text-align: right;
+        align: right;
+        font-size: 15px;
+        margin-top: 10px;
+        margin-bottom: 10px;
+      }
+
+      .paddingtesto{
+        padding-top: 5px;
+        padding-bottom: 5px;
+        padding-left: 25px;
+        padding-right: 25px;
+      }
 
     </style>
     <div class="container">
@@ -120,7 +173,12 @@ subject to an additional IP rights grant found at http://polymer.github.io/PATEN
           <!--input id="myBtn" class="avatar" type=”button” value="Send" onclick="myFunction()"/-->
           <button id="myBtn" class="avatar" type=”button” on-tap="handleTap"><iron-icon icon="myicons:send"></iron-icon></button>
       </div>
-
+    </div>
+    <div class="container">
+      <div id="chat">
+        <div class="rowdx"><div class="childchat"><p class="paddingtesto">Ciao sono il bambino</p></div></div>
+        <div class="rowsx"><div class="yummychat"><p class="paddingtesto">Ciao sono yammy</p></div></div>
+      </div>
     </div>
   </template>
 
