@@ -212,11 +212,10 @@ subject to an additional IP rights grant found at http://polymer.github.io/PATEN
           childtext.setAttribute("class", "paddingtesto");
           //append
           childtext.innerHTML = this.$.request.value;
-          childrow.innerHTML = childmsg;
-          childmsg.innerHTML = childtext;
+          childmsg.appendChild(childtext);
+          childrow.appendChild(childmsg);
           this.$.chat.appendChild(childrow);
-
-
+          //remove part
           this.$.request.value = "";
           this.$.secondaryColor.remove();
           this.$.title.remove();
