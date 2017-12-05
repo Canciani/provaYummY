@@ -104,34 +104,34 @@ subject to an additional IP rights grant found at http://polymer.github.io/PATEN
       }
 
       div#chat{
-        width:90%;
+        width:80%;
       }
 
       div.rowdx{
         width: 100%;
-        background-color: #ddd;
+        background-color: #000;
         border: solid 3px green;
       }
       div.rowsx{
         width: 100%;
         align-content: left;
         background-color: #ddd;
+        border: solid 3px blue;
       }
 
       div.yummychat {
 	      font-family: Tahoma, sans-serif;
         background-color: #eb9712;
         border-radius: 30px;
-        position: relative;
-        width: 50%;
+        width: 40%;
         border: none;
         color: #fff;
         box-shadow: 0 4px 25px 0 rgba(0, 0, 0, 0.1);
         text-align: left;
-        align: left;
         font-size: 15px;
         margin-top: 10px;
         margin-bottom: 10px;
+        margin-right: 60%;
       }
 
       div.childchat {
@@ -139,15 +139,15 @@ subject to an additional IP rights grant found at http://polymer.github.io/PATEN
         background-color: #fff;
         border-radius: 30px;
         position: relative;
-        width: 50%;
+        width: 40%;
         border: none;
         color: #eb9712;
         box-shadow: 0 4px 25px 0 rgba(0, 0, 0, 0.1);
-        text-align: right;
-        align: right;
+        text-align: left;
         font-size: 15px;
         margin-top: 10px;
         margin-bottom: 10px;
+        margin-left: 60%;
       }
 
       .paddingtesto{
@@ -174,10 +174,11 @@ subject to an additional IP rights grant found at http://polymer.github.io/PATEN
           <button id="myBtn" class="avatar" type=”button” on-tap="handleTap"><iron-icon icon="myicons:send"></iron-icon></button>
       </div>
     </div>
+
     <div class="container">
       <div id="chat">
         <div class="rowdx"><div class="childchat"><p class="paddingtesto">Ciao sono il bambino</p></div></div>
-        <div class="rowsx"><div class="yummychat"><p class="paddingtesto">Ciao sono yammy</p></div></div>
+        <div class="rowsx"><div class="yummychat"><p class="paddingtesto">Ciao sono yummy</p></div></div>
       </div>
     </div>
   </template>
@@ -195,6 +196,11 @@ subject to an additional IP rights grant found at http://polymer.github.io/PATEN
           this.$.yummy.remove();
           this.$.textarea.style.bottom = '30px';
           this.$.button.style.bottom = '30px';
+
+          var addElem  = document.createElement("div");
+          addElem.innerHTML = this.$.request.value;
+          this.$.prova.appendChild(addElem);
+
           this.$.request.value = "";
           this.$.secondaryColor.remove();
           this.$.title.remove();
