@@ -105,18 +105,20 @@ subject to an additional IP rights grant found at http://polymer.github.io/PATEN
 
       div#chat{
         width:80%;
+        background-color: #666;
+        border: solid 3px green;
       }
 
       div.rowdx{
         width: 100%;
-        background-color: #000;
-        border: solid 3px green;
+        background-color: #aaa;
+        border: solid 3px blue;
       }
+
       div.rowsx{
         width: 100%;
-        align-content: left;
         background-color: #ddd;
-        border: solid 3px blue;
+        border: solid 3px red;
       }
 
       div.yummychat {
@@ -177,8 +179,10 @@ subject to an additional IP rights grant found at http://polymer.github.io/PATEN
 
     <div class="container">
       <div id="chat">
+        <!--
         <div class="rowdx"><div class="childchat"><p class="paddingtesto">Ciao sono il bambino</p></div></div>
         <div class="rowsx"><div class="yummychat"><p class="paddingtesto">Ciao sono yummy</p></div></div>
+        -->
       </div>
     </div>
   </template>
@@ -197,9 +201,21 @@ subject to an additional IP rights grant found at http://polymer.github.io/PATEN
           this.$.textarea.style.bottom = '30px';
           this.$.button.style.bottom = '30px';
 
-          var addElem  = document.createElement("div");
-          addElem.innerHTML = this.$.request.value;
-          this.$.prova.appendChild(addElem);
+          //creo la riga;
+          var childrow  = document.createElement("div");
+          childrow.setAttribute("class", "rowdx");
+          //creo il messaggio del bimbo
+          var childmsg  = document.createElement("div");
+          childmsg.setAttribute("class", "childchat");
+          //creo il testo
+          var childtext  = document.createElement("p");
+          childtext.setAttribute("class", "paddingtesto");
+          //append
+          childtext.innerHTML = this.$.request.value;
+          childrow.innerHTML = childmsg;
+          childmsg.innerHTML = childtext;
+          this.$.chat.appendChild(childrow);
+
 
           this.$.request.value = "";
           this.$.secondaryColor.remove();
