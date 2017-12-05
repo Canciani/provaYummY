@@ -133,6 +133,7 @@ subject to an additional IP rights grant found at http://polymer.github.io/PATEN
         margin-top: 10px;
         margin-bottom: 10px;
         margin-right: 60%;
+
       }
 
       div.childchat {
@@ -158,6 +159,10 @@ subject to an additional IP rights grant found at http://polymer.github.io/PATEN
         padding-right: 25px;
       }
 
+      div.littleImage{
+        margin-bottom: -19px;
+      }
+
     </style>
     <div class="container">
       <div class="bgcolor" id="secondaryColor"></div>
@@ -175,7 +180,19 @@ subject to an additional IP rights grant found at http://polymer.github.io/PATEN
           <button id="myBtn" class="avatar" type=”button” on-tap="handleTap"><iron-icon icon="myicons:send"></iron-icon></button>
       </div>
     </div>
-    <div> <img alt="" src = "images/YummYanimation.gif" width = "40" height="40"></div>
+
+  <!--<div class="container">
+      <div id="chat">
+        <div class="rowsx">
+          <div class="littleImage"><img alt="" src = "images/Halfmonster.png" width = "60.48" height="41.3">
+          </div>
+          <div class="yummychat">
+            <p>aaa aaa aaa aaa aaa aaa aaa aaa aaa aaa aaa aaa aaa aaa aaa </p>
+          </div>-->
+
+        </div>
+      </div>
+    </div>
 
     <div class="container">
       <div id="chat">
@@ -225,9 +242,19 @@ subject to an additional IP rights grant found at http://polymer.github.io/PATEN
           //creo il testo
           var yummytext  = document.createElement("p");
           yummytext.setAttribute("class", "paddingtesto");
+
+          //creo il mini YummY
+          var yummyavatar = document.createElement("div");
+          yummyavatar.setAttribute("class", "littleImage");
+          var img = document.createElement("IMG");
+          img.setAttribute("src", "images/HalfMonster.png");
+          img.setAttribute("width", "60.48");
+          img.setAttribute("height", "41.3");
           //append
           yummytext.innerHTML = this.$.request.value;
           yummymsg.appendChild(yummytext);
+          yummyavatar.appendChild(img);
+          yummyrow.appendChild(yummyavatar);
           yummyrow.appendChild(yummymsg);
           this.$.chat.appendChild(yummyrow);
           //remove part
