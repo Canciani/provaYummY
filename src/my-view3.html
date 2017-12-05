@@ -101,15 +101,15 @@ subject to an additional IP rights grant found at http://polymer.github.io/PATEN
     <p id="bbb"><p>
     <div class="container">
       <font class="bomb">YummY</font>
-      <div class="avatar container">
+      <div id="yummy" class="avatar container">
         <div width="100%">
           <img alt="" src = "images/YummYanimation.gif" width = "187.5" height="152.5">
         </div>
       </div>
-      <div class="avatar container">
+      <div id="textarea" class="avatar container">
           <textarea id="aaa" class="avatar" placeholder="Type text here"></textarea>
       </div>
-      <div class="avatar half container">
+      <div id="button" class="avatar half container">
           <!--input id="myBtn" class="avatar" type=”button” value="Send" onclick="myFunction()"/-->
           <button id="myBtn" class="avatar" type=”button” on-tap="handleTap"> <iron-icon icon="myicons:send"></iron-icon></button>
       </div>
@@ -121,10 +121,18 @@ subject to an additional IP rights grant found at http://polymer.github.io/PATEN
       is: 'my-view3',
 
       handleTap: function() {
+<<<<<<< HEAD
         if(this.$.aaa.value!="")
         alert(this.$.aaa.value);
         else {
           alert("EMPY MESSAGE");
+=======
+        if(this.$.aaa.value!=""){
+          alert(this.$.aaa.value);
+          this.$.yummy.style.bottom = '10px';
+          this.$.textarea.style.bottom = '10px';
+          this.$.button.style.bottom = '10px';
+>>>>>>> 5bb98b95b9e6f6f29779c883910136dd48cfbf4c
         }
       }
 
