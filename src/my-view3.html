@@ -205,7 +205,7 @@ subject to an additional IP rights grant found at http://polymer.github.io/PATEN
   <script src="dialogFlow/es6/Request/TextRequest.js"></script>
   <script src="dialogFlow/es6/Interfaces.js"></script>
   <script src="dialogFlow/es6/webApp.js"></script>
-  
+
   <script>
     Polymer({
       is: 'my-view3',
@@ -219,6 +219,7 @@ subject to an additional IP rights grant found at http://polymer.github.io/PATEN
           this.$.yummy.remove();
           this.$.textarea.style.bottom = '30px';
           this.$.button.style.bottom = '30px';
+          console.log("prova!!!");
 
           //creo la riga bimbo;
           this.chat.appendChildMessages(this.$.request.value);
