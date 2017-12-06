@@ -7,7 +7,9 @@
    Se proviamo ad assegnare un valore ad una proprietà non definita creiamo di
   fatto questa proprietà inizializzandola con il valore assegnato:
   ApiAiConstants.VERSION ecc... */
-export var ApiAiConstants;
+//export
+
+var ApiAiConstants;
 (function (ApiAiConstants) {
     let AVAILABLE_LANGUAGES;
     (function (AVAILABLE_LANGUAGES) {

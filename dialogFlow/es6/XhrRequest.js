@@ -113,4 +113,4 @@ XhrRequest.XMLHttpFactories = [
         Method[Method["DELETE"] = "DELETE"] = "DELETE";
     })(Method = XhrRequest.Method || (XhrRequest.Method = {}));
 })(XhrRequest || (XhrRequest = {}));
-export default XhrRequest;
+//export default XhrRequest;

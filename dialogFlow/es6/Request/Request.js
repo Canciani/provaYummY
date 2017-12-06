@@ -1,6 +1,6 @@
 // La classe Request viene estesa da EventRequest e textRequest
-import { ApiAiRequestError } from "../Errors";
-import XhrRequest from "../XhrRequest";
+//import { ApiAiRequestError } from "../Errors";
+//import XhrRequest from "../XhrRequest";
 
 /* Costruttore di Request che riceve come parametri ApiAiClient e options,
    Inizializza la richiesta con tutti i dati presenti nella classe ApiAiClient*/
@@ -60,4 +60,4 @@ class Request {
             .catch(Request.handleError.bind(this));
     }
 }
-export default Request;
+//export default Request;

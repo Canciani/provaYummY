@@ -1,5 +1,6 @@
 /* Vengono utilizzate due funzioni anonime e applicate due IIFE*/
-export var IStreamClient;
+//export
+var IStreamClient;
 (function (IStreamClient) {
     let ERROR;
     (function (ERROR) {

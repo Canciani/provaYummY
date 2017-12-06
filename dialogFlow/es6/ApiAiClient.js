@@ -1,4 +1,4 @@
-
+/*
 import { ApiAiConstants } from "./ApiAiConstants";
 import { ApiAiClientConfigurationError } from "./Errors";
 import { EventRequest } from "./Request/EventRequest";
@@ -8,8 +8,10 @@ export { ApiAiConstants } from "./ApiAiConstants";
 
 /* Viene dichiarata la classe ApiAiClient, il costruttore riceve in ingresso
    come parametro options che dovrebbe contenere per un corretto funzionamento
-   l'acess token a DialogFlow*/
-export class ApiAiClient {
+   l'acess token a DialogFlow
+export */
+
+class ApiAiClient {
     constructor(options) {
         if (!options || !options.accessToken) {
             throw new ApiAiClientConfigurationError("Access token is required for new ApiAi.Client instance");
