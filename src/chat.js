@@ -7,7 +7,10 @@ class Chat extends HTMLElement {
   handleResponse(serverResponse) {
     //serverResponse.result.fulfillment.messages entra nel JSON
     this.appendYummyMessages(serverResponse.result.fulfillment.speech);
+  }
 
+  responseDF(messages) {
+    return messages;
   }
 
   //funzione che manda gli errori al console.log
@@ -62,6 +65,7 @@ class Chat extends HTMLElement {
       //errore da controllare
       //this.$.display.appendChild(yummyrow);
       console.log(yummyrow);
+
       return yummyrow;
   }
 
@@ -71,6 +75,7 @@ class Chat extends HTMLElement {
     promise
         .then(this.handleResponse.bind(this))
         .catch(this.handleError);
+
   }
 
 }
