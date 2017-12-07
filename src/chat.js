@@ -1,7 +1,7 @@
 class Chat extends HTMLElement {
   constructor() {
         super();
-        const promise = webApp.apiaiClient.textRequest("Il cane abbaia");
+        const promise = webApp.apiaiClient.textRequest("Il cane abbaia in cucina");
 
         promise
             .then(this.handleResponse.bind(this))
@@ -21,6 +21,8 @@ class Chat extends HTMLElement {
   }
 
   appendChildMessages(messages) {
+
+      console.log(messages);
       //creo html
       var childrow  = document.createElement("div");
       childrow.setAttribute("class", "rowdx");
@@ -56,7 +58,7 @@ class Chat extends HTMLElement {
       yummytext.innerHTML = rispostaYummy;
       yummymsg.appendChild(yummytext);
       yummyrow.appendChild(yummymsg);
-      this.$.display.appendChild(yummyrow);
+      //this.$.display.appendChild(yummyrow);
   }
 
   childRequest(text) {
@@ -68,4 +70,4 @@ class Chat extends HTMLElement {
   }
 }
 
-window.customElements.define('chat', Chat);
+customElements.define('my-chat', Chat);

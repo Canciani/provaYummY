@@ -182,7 +182,7 @@
 
 
     <div class="container">
-      <chat id="chat1">
+      <my-chat id="chat1">
         <div id="display">
         <!--
           <div class="rowdx">
@@ -197,7 +197,7 @@
           </div>
         -->
         </div>
-      </chat>
+      </my-chat>
     </div>
   </template>
   <!-- IMPORT -->
@@ -209,6 +209,7 @@
   <script src="/dialogFlow/es6/Request/EventRequest.js"></script>
   <script src="/dialogFlow/es6/Request/TextRequest.js"></script>
   <script src="/dialogFlow/es6/Interfaces.js"></script>
+  <script src="/src/chat.js"></script>
 
   <script src="/dialogFlow/webApp.js"></script>
 
@@ -232,12 +233,12 @@
           //PRIMO ERRORE!
 
 
-          this.chat1.appendChildMessages(this.$.request.value);
+          appendChildMessages(this.$.request.value);
           alert("appendChildMessages invocata");
 
           //creo la riga yummy;
           //risposta YummY
-          this.chat.childRequest(this.$.request.value);
+          this.my-chat.childRequest(this.$.request.value);
 
           alert("childRequest invocata");
           //PROVA INTERAZIONE CON YUMMY
@@ -266,6 +267,6 @@
       static get is() { return 'my-view3'; }
     }
     // SECONDO ERRORE
-    window.customElements.define(MyView3.is, MyView3);
+    customElements.define(MyView3.is, MyView3);
   </script>
 </dom-module>
