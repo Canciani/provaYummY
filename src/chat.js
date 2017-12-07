@@ -1,18 +1,18 @@
 class Chat extends HTMLElement {
   constructor() {
         super();
-
-        const promise = webApp.apiaiClient.textRequest("Il cane abbaia")
+        const promise = webApp.apiaiClient.textRequest("Il cane abbaia");
 
         promise
             .then(this.handleResponse.bind(this))
             .catch(this.handleError);
   }
 
-  //Funzione che aggiunge alla chat il messaggio vreato dalla serverResponse
+  //Funzione che aggiunge alla chat il messaggio creato dalla serverResponse
   handleResponse(serverResponse) {
     //serverResponse.result.fulfillment.messages entra nel JSON
     this.appendYummyMessages(serverResponse.result.fulfillment.messages);
+
   }
 
   //funzione che manda gli errori al console.log
@@ -48,7 +48,7 @@ class Chat extends HTMLElement {
       var yummymsg  = document.createElement("div");
       yummymsg.setAttribute("class", "yummychat");
       var yummytext  = document.createElement("p");
-      yummytext.setAttribute("class", "paddingtesto");*/
+      yummytext.setAttribute("class", "paddingtesto");
 
       var rispostaYummy = message;
 
@@ -68,4 +68,4 @@ class Chat extends HTMLElement {
   }
 }
 
-customElements.define('chat', Chat);
+window.customElements.define('chat', Chat);
