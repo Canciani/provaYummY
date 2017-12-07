@@ -237,12 +237,12 @@
           //PRIMO ERRORE!
 
 
-          this.$.display.appendChild(this.$.chat1.appendChildMessages(this.$.request.value));
+          this.$.chat1.appendChildMessages(this.$.request.value);
           alert("appendChildMessages invocata");
 
           //creo la riga yummy;
           //risposta YummY
-          this.$.display.appendChild(this.$.chat1.appendYummyMessages(/*inserire il risulato della call di childRequest*/));
+          this.$.chat1.childRequest(this.$.request.value);
           alert("childRequest invocata");
           //PROVA INTERAZIONE CON YUMMY
           //var rispostaYummy = webApp.apiaiClient.textRequest(this.$.request.value);

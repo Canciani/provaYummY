@@ -9,10 +9,6 @@ class Chat extends HTMLElement {
     this.appendYummyMessages(serverResponse.result.fulfillment.speech);
   }
 
-  responseDF(messages) {
-    return messages;
-  }
-
   //funzione che manda gli errori al console.log
   handleError(serverError) {
       console.log(serverError);
@@ -36,8 +32,8 @@ class Chat extends HTMLElement {
       childrow.appendChild(childmsg);
 
       console.log(childrow);
-
-      return childrow;
+//PORCO IL CLERO FUNZIONA!
+      this.appendChild(childrow);
 
       //errore da controllare il this.$.display
       //this.$.display.appendChild(childrow);
@@ -65,8 +61,8 @@ class Chat extends HTMLElement {
       //errore da controllare
       //this.$.display.appendChild(yummyrow);
       console.log(yummyrow);
-
-      return yummyrow;
+//PORCO IL CLERO FUNZIONA!
+      this.appendChild(yummyrow);
   }
 
   childRequest(text) {
