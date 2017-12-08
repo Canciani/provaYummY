@@ -33,6 +33,30 @@
         background: red;
       }
 
+      div.dim {
+        width: 180px;
+        border: solid 3px green;
+
+      }
+
+      button.dog{
+        width: 80px;
+        height: 80px;
+        text-align: center;
+        background-color: #fff;
+        border-radius: 50%;
+        box-shadow: 0 4px 25px 0 rgba(0, 0, 0, 0.1);
+        border: none;
+        resize: none;
+        outline: none;
+        margin: 3px;
+      }
+
+      img.dimension {
+        width: 60px;
+        height: 60px;
+      }
+
     </style>
 
     <div class="container">
@@ -43,6 +67,16 @@
       <paper-button class="fancy">send</paper-button>
     </div>
 
+    <div class="container">
+
+      <div class="dim">
+        <button id="dog" class="dog" type="button" on-tap=""><img alt="" src="images/DogEating.png" class="dimension"></button>
+        <button id="dog" class="dog" type="button" on-tap=""><img alt="" src="images/DogPissing.png" width="60px" height="60px"></button>
+        <button id="dog" class="dog" type="button" on-tap=""><img alt="" src="images/DogPlaying.png" width="60px" height="60px"></button>
+        <button id="dog" class="dog" type="button" on-tap=""><img alt="" src="images/DogPoo.png" width="60px" height="60px"></button>
+      <div>
+
+    </div>
 
 
   </template>
