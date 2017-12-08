@@ -228,7 +228,7 @@
           this.$.yummy.remove();
           this.$.textarea.style.bottom = '30px';
           this.$.button.style.bottom = '30px';
-          alert("Spostamento in basso!");
+          //alert("Spostamento in basso!");
 
           //creo la riga bimbo;
 
@@ -236,25 +236,25 @@
 
 
           this.$.chat1.appendChildMessages(this.$.request.value);
-          alert("appendChildMessages invocata");
+          //alert("appendChildMessages invocata");
 
           //creo la riga yummy;
           //risposta YummY
           this.$.chat1.childRequest(this.$.request.value);
-          alert("childRequest invocata");
+          //alert("childRequest invocata");
           //PROVA INTERAZIONE CON YUMMY
           //var rispostaYummy = webApp.apiaiClient.textRequest(this.$.request.value);
 
           //append
           //this.$.display.appendChild(this.$.chat1.appendYummyMessages(this.$.request.value));
-          alert("finita creazione yummyMSG");
+          //alert("finita creazione yummyMSG");
 
 
-          //remove part
+          //remove part DA ESEGUIRE SOLO UNA VOLTA
           this.$.request.value = "";
           this.$.secondaryColor.remove();
           this.$.title.remove();
-          alert("Eliminazione contenuto text area eseguita!");
+          //alert("Eliminazione contenuto text area eseguita!");
 
         }
       }
