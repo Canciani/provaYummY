@@ -39,24 +39,31 @@ class Chat extends HTMLElement {
       //this.$.display.appendChild(childrow);
   }
 
-  appendYummyMessages(message) {
+  appendYummyMessages(messages) {
       //manda il messaggio al log
-      console.log(message);
+      console.log(messages);
       //creo html
       //creo la riga yummy;
       var yummyrow  = document.createElement("div");
       yummyrow.setAttribute("class", "rowsx");
+      //creo l'immagine di YummY
+      var yummyavatar = document.createElement("div");
+      yummyavatar.setAttribute("style", "margin-left: 20px; margin-bottom: -19px;");
+      var img = document.createElement("IMG");
+      img.setAttribute("src", "images/HalfMonster.png");
+      img.setAttribute("width", "60.48");
+      img.setAttribute("height", "41.3");
       //creo il messaggio del bimbo
       var yummymsg  = document.createElement("div");
       yummymsg.setAttribute("class", "yummychat");
       var yummytext  = document.createElement("p");
       yummytext.setAttribute("class", "paddingtesto");
 
-      var rispostaYummy = message;
-
       //append
-      yummytext.innerHTML = rispostaYummy;
+      yummytext.innerHTML = messages;
       yummymsg.appendChild(yummytext);
+      yummyavatar.appendChild(img);
+      yummyrow.appendChild(yummyavatar);
       yummyrow.appendChild(yummymsg);
       //errore da controllare
       //this.$.display.appendChild(yummyrow);
