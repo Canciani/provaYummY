@@ -45,7 +45,7 @@ class Chat extends HTMLElement {
       //creo html
       //creo la riga yummy;
 
-      if(messages != "Dove si trova il cane? (abbaia)"){
+      if(messages != "Dove si trova il cane? (abbaia)" && messages != "Ciao!" && messages != "Buongiorno!"){
         var yummyrow  = document.createElement("div");
         yummyrow.setAttribute("class", "rowsx");
         //creo l'immagine di YummY
@@ -73,7 +73,7 @@ class Chat extends HTMLElement {
         console.log(yummyrow);
   //PORCO IL CLERO FUNZIONA!
         this.appendChild(yummyrow);
-      }else{
+      }else if(messages == "Dove si trova il cane? (abbaia)"){
         var yummyrow  = document.createElement("div");
         yummyrow.setAttribute("class", "rowsx");
         //creo l'immagine di YummY
@@ -115,6 +115,11 @@ class Chat extends HTMLElement {
         button3.setAttribute("class", "dog");
         button4.setAttribute("class", "dog");
 
+        button1.setAttribute("onclick", "clickButton();");
+        button2.setAttribute("onclick", "");
+        button3.setAttribute("onclick", "");
+        button4.setAttribute("onclick", "");
+
         var img1 = document.createElement("IMG");
         var img2 = document.createElement("IMG");
         var img3 = document.createElement("IMG");
@@ -142,7 +147,54 @@ class Chat extends HTMLElement {
 
         this.appendChild(yummyBox);
 
+      }else if(messages == "Ciao!" || messages == "Buongiorno!"){
+        var yummyrow  = document.createElement("div");
+        yummyrow.setAttribute("class", "rowsx");
+        //creo l'immagine di YummY
+        var yummyavatar = document.createElement("div");
+        //creare una classe con gli stili dell'immagine
+        yummyavatar.setAttribute("style", "margin-left: 20px; margin-bottom: -19px;");
+        var img = document.createElement("IMG");
+        img.setAttribute("src", "images/Hi.gif");
+        img.setAttribute("width", "63.75");
+        img.setAttribute("height", "54");
+        //creo il messaggio del bimbo
+        var yummymsg  = document.createElement("div");
+        yummymsg.setAttribute("class", "yummychat");
+        var yummytext  = document.createElement("p");
+        yummytext.setAttribute("class", "paddingtesto");
+
+        //append
+        yummytext.innerHTML = messages;
+        yummymsg.appendChild(yummytext);
+        yummyavatar.appendChild(img);
+        yummyrow.appendChild(yummyavatar);
+        yummyrow.appendChild(yummymsg);
+        //errore da controllare
+        //this.$.display.appendChild(yummyrow);
+        console.log(yummyrow);
+  //PORCO IL CLERO FUNZIONA!
+        this.appendChild(yummyrow);
       }
+  }
+
+  clickButton(type){
+    switch(type) {
+    case 0:
+      childRequest("in bagno");
+      break;
+    case 1:
+      childRequest("davanti alla porta");
+      break;
+    case 2:
+      childRequest("in cucina");
+      break;
+    case 3:
+      childRequest("sul divano");
+    default:
+      console.log("entrato");
+
+    }
   }
 
   childRequest(text) {
