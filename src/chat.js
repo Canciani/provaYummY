@@ -101,7 +101,7 @@ class Chat extends HTMLElement {
         console.log(yummyrow);
   //PORCO IL CLERO FUNZIONA!
         this.appendChild(yummyrow);
-        
+
         var yummyBox = document.createElement("div");
         yummyBox.setAttribute("class", "container");
 
@@ -120,10 +120,10 @@ class Chat extends HTMLElement {
         var img3 = document.createElement("IMG");
         var img4 = document.createElement("IMG");
 
-        img1.setAttribute("src", "images/DogPissing.png");
-        img2.setAttribute("src", "images/DogEating.png");
-        img3.setAttribute("src", "images/DogPlaying.png");
-        img4.setAttribute("src", "images/DogPoo.png");
+        img1.setAttribute("src", "images/bath.png");
+        img2.setAttribute("src", "images/door.png");
+        img3.setAttribute("src", "images/kitchen.png");
+        img4.setAttribute("src", "images/sofa.png");
 
         img1.setAttribute("class", "dimension");
         img2.setAttribute("class", "dimension");
