@@ -38,7 +38,7 @@
 
       div.bgcolor{
         position: absolute;
-        background-color: #fff;
+        background-color: #eb9712;
         height: 33%;
         bottom: 0px;
         width: 100%;
@@ -101,6 +101,18 @@
         position: absolute;
         bottom: 7px;
         right: 5px;
+        box-shadow: 0 4px 25px 0 rgba(0, 0, 0, 0.1);
+        border: none;
+        resize: none;
+        outline: none;
+      }
+
+      button.dog{
+        width: 80px;
+        height: 80px;
+        text-align: center;
+        background-color: #fff;
+        border-radius: 50%;
         box-shadow: 0 4px 25px 0 rgba(0, 0, 0, 0.1);
         border: none;
         resize: none;
@@ -182,8 +194,10 @@
           <button id="myBtn" class="avatar" type=”button” on-tap="handleTap"><iron-icon icon="myicons:send"></iron-icon></button>
       </div>
     </div>
+<!--
+    <button id="dog" class="dog" type="button" on-tap=""><img alt="" src="images/DogEating.png" width="60px" height="60px"></button>
 
-
+-->
 
     <div class="container">
       <my-chat id="chat1" class="dim">

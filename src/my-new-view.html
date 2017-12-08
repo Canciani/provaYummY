@@ -1,19 +1,10 @@
-<!-- Load the Polymer.Element base class -->
 <link rel="import" href="../bower_components/polymer/polymer-element.html">
-<link rel="import" href="bower_components/iron-flex-layout/iron-flex-layout-classes.html">
-<!--<link rel="import" href="../bower_components/paper-icon-button/paper-icon-button.html">-->
-<link rel="import" href="../iron-icons/iron-icons.html">
-
 <link rel="import" href="shared-styles.html">
 <link rel="import" href="/src/myicons.html">
 
 
 <dom-module id="my-new-view">
-  <!-- Defines the element's style and local DOM -->
-  <!-- double bcknd background: linear-gradient(to bottom, #f5dabd 0%,#f5dabd 50%,#fff 50%,#fff 50%,#fff 100%);-->
   <template>
-    <!-- include="shared-styles" include il dom-module dove ci sono scritti
-         vari CSS che vogliamo riutilizzare in più pagine-->
     <style include="shared-styles">
 
       :host {
@@ -43,10 +34,7 @@
       }
 
     </style>
-    <!--
-    <div>
-      <iron-icon icon="myicons:send"></iron-icon>
-    </div>-->
+
     <div class="container">
       <font class="bomb">YummY</font>
       <img class="yummy" alt="" src = "images/YummYanimation.gif"
@@ -56,23 +44,13 @@
     </div>
 
 
-    <!-- old style button
-      <button class="sendIt "type="submit" onclick="saveMsg()"><img src="images/sentIt.png" width="12px"
-        height="12px" align="center"></button>-->
-      <!-- PERMETTE DI LINKARE UN'IMMAGINE SE CLICCATA AD UNA PAGINA
-      <iron-selector selected="[[page]]" attr-for-selected="name" class="drawer-list" role="navigation">
-        <a name="view1" href="[[rootPath]]view1">
-          <img alt="" src = "images/YummYanimation.gif" width = "187.5" height="152.5"></a>
-      </iron-selector>
-    -->
+
   </template>
 
   <script>
-    // Your new element extends the Polymer.Element base class
     class MyNewView extends Polymer.Element {
       static get is() { return 'my-new-view'; }
     }
-    //Now, register your new custom element so the browser can use it
     customElements.define(MyNewView.is, MyNewView);
   </script>
 
@@ -81,24 +59,5 @@
         alert("cliccato!");
     }
   </script>
-
-<!-- Cambiare immagine al click!
-  <img alt="" src = "images/YummYanimation.gif" width = "187.5" height="152.5"
-    id="imgClickAndChange" onclick="changeImage()"/>
-
-  <script>
-    function changeImage() {
-
-        if (document.getElementById("imgClickAndChange").src == "images/YummYanimation.gif")
-        {
-            document.getElementById("imgClickAndChange").src = "images/Scompaio.gif";
-        }
-        else
-        {
-            document.getElementById("imgClickAndChange").src = "images/YummYanimation.gif";
-        }
-    }
-  </script>
--->
 
 </dom-module>
