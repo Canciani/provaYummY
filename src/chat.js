@@ -115,19 +115,22 @@ class Chat extends HTMLElement {
         button3.setAttribute("class", "dog");
         button4.setAttribute("class", "dog");
 
+        button1.setAttribute("onclick", this.clickButton('0'));
+        /*button2.setAttribute("on-tap", this.clickButton('1'));
+        button3.setAttribute("on-tap", this.clickButton('2'));
+        button4.setAttribute("on-tap", this.clickButton('3'));*/
+        //utton1.onclick = this.childRequest("in bagno");
+
         //button1.setAttribute("onclick", "clickButton();");
-        button1.onclick = function(){
-            childRequest("in bagno");
-        }
-        button2.onclick = function(){
-          childRequest("davanti alla porta");
+      /*  button2.onclick = function(){
+          this.childRequest("davanti alla porta")
         }
         button3.onclick = function(){
           childRequest("in cucina");
         }
         button4.onclick = function(){
           childRequest("sul divano");
-        }
+        }*/
 
         var img1 = document.createElement("IMG");
         var img2 = document.createElement("IMG");
@@ -189,17 +192,17 @@ class Chat extends HTMLElement {
 
   clickButton(type){
     switch(type) {
-    case 0:
-      childRequest("in bagno");
+    case '0':
+      this.childRequest("in bagno");
       break;
-    case 1:
-      childRequest("davanti alla porta");
+    case '1':
+      this.childRequest("davanti alla porta");
       break;
-    case 2:
-      childRequest("in cucina");
+    case '2':
+      this.childRequest("in cucina");
       break;
-    case 3:
-      childRequest("sul divano");
+    case '3':
+      this.childRequest("sul divano");
     default:
       console.log("entrato");
 

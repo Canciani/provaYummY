@@ -174,7 +174,10 @@
       }
 
       .dim{
-        width: 90%;
+        position: absolute;
+        width:90%;
+        height: 73%;
+        overflow-y: scroll;
       }
 
       div.dimBox{
@@ -200,6 +203,11 @@
       }
 
     </style>
+    <!-- CHAT -->
+    <div class="container">
+      <my-chat id="chat1" class="dim"></my-chat>
+    </div>
+    <!-- PULSANTE -->
     <div class="container">
       <div class="bgcolor" id="secondaryColor"></div>
       <font class="bomb" id="title">YummY</font>
@@ -216,27 +224,13 @@
           <button id="myBtn" class="avatar" type=”button” on-tap="handleTap"><iron-icon icon="myicons:send"></iron-icon></button>
       </div>
     </div>
+
 <!--
     <button id="dog" class="dog" type="button" on-tap=""><img alt="" src="images/DogEating.png" width="60px" height="60px"></button>
 
 -->
 
-    <div class="container">
-      <my-chat id="chat1" class="dim">
-        <!--
-          <div class="rowdx">
-            <div class="childchat">
-              <p class="paddingtesto"></p>
-            </div>
-          </div>
-          <div class="rowsx">
-            <div class="yummychat">
-              <p class="paddingtesto"></p>
-            </div>
-          </div>
-        -->
-      </my-chat>
-    </div>
+
   </template>
   <!-- IMPORT -->
   <script src="/dialogFlow/es6/ApiAiClient.js"></script>
@@ -265,18 +259,15 @@
           this.$.textarea.style.bottom = '30px';
           this.$.button.style.bottom = '30px';
           //alert("Spostamento in basso!");
-
-          //creo la riga bimbo;
-
-          //PRIMO ERRORE!
-
-
           this.$.chat1.appendChildMessages(this.$.request.value);
           //alert("appendChildMessages invocata");
-
           //creo la riga yummy;
           //risposta YummY
+
           this.$.chat1.childRequest(this.$.request.value);
+
+
+          //this.$.chat1.ScrollToBottom();
           //alert("childRequest invocata");
           //PROVA INTERAZIONE CON YUMMY
           //var rispostaYummy = webApp.apiaiClient.textRequest(this.$.request.value);
@@ -294,8 +285,6 @@
 
         }
       }
-
-
 
     });
 
