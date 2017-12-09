@@ -115,10 +115,19 @@ class Chat extends HTMLElement {
         button3.setAttribute("class", "dog");
         button4.setAttribute("class", "dog");
 
-        button1.setAttribute("onclick", "clickButton();");
-        button2.setAttribute("onclick", "");
-        button3.setAttribute("onclick", "");
-        button4.setAttribute("onclick", "");
+        //button1.setAttribute("onclick", "clickButton();");
+        button1.onclick = function(){
+            childRequest("in bagno");
+        }
+        button2.onclick = function(){
+          childRequest("davanti alla porta");
+        }
+        button3.onclick = function(){
+          childRequest("in cucina");
+        }
+        button4.onclick = function(){
+          childRequest("sul divano");
+        }
 
         var img1 = document.createElement("IMG");
         var img2 = document.createElement("IMG");
