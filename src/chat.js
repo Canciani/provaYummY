@@ -116,10 +116,10 @@ class Chat extends HTMLElement {
         button4.setAttribute("class", "dog");
 
         //button1.setAttribute("id", "bath");
-        button1.addEventListener('click', this.clickButton.bind(this, '0'));
-        button2.addEventListener('click', this.clickButton.bind(this, '1'));
-        button3.addEventListener('click', this.clickButton.bind(this, '2'));
-        button4.addEventListener('click', this.clickButton.bind(this, '3'));
+        button1.addEventListener('click', this.clickButton.bind(this, '0', button1, button2, button3, button4));
+        button2.addEventListener('click', this.clickButton.bind(this, '1', button1, button2, button3, button4));
+        button3.addEventListener('click', this.clickButton.bind(this, '2', button1, button2, button3, button4));
+        button4.addEventListener('click', this.clickButton.bind(this, '3', button1, button2, button3, button4));
         //button1.addEventListener("click", clickButton('0'));
         /*button2.setAttribute("on-tap", this.clickButton('1'));
         button3.setAttribute("on-tap", this.clickButton('2'));
@@ -195,19 +195,35 @@ class Chat extends HTMLElement {
       }
   }
 
-  clickButton(type){
+  clickButton(type, bt1, bt2, bt3, bt4){
     switch(type) {
     case '0':
       this.childRequest("in bagno");
+      bt1.disabled = true;
+      bt2.remove();
+      bt3.remove();
+      bt4.remove();
       break;
     case '1':
       this.childRequest("davanti alla porta");
+      bt1.remove();
+      bt2.disabled = true;
+      bt3.remove();
+      bt4.remove();
       break;
     case '2':
       this.childRequest("in cucina");
+      bt1.remove();
+      bt2.remove();
+      bt3.disabled = true;
+      bt4.remove();
       break;
     case '3':
       this.childRequest("sul divano");
+      bt1.remove();
+      bt2.remove();
+      bt3.remove();
+      bt4.disabled = true;
     default:
       console.log("entrato");
 
