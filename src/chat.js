@@ -35,6 +35,23 @@ class Chat extends HTMLElement {
 //PORCO IL CLERO FUNZIONA!
       this.appendChild(childrow);
 
+      if(messages == "il cane abbaia"){
+
+        var yummyBox = document.createElement("div");
+        yummyBox.setAttribute("class", "container");
+        var button1 = document.createElement("BUTTON");
+        button1.setAttribute("class", "dog");
+        button1.addEventListener('click', this.playAudio.bind(this, button1));
+        var img1 = document.createElement("IMG");
+        img1.setAttribute("src", "images/dog6.png");
+        img1.setAttribute("class", "dimension");
+        button1.appendChild(img1);
+        yummyBox.appendChild(button1);
+        this.appendChild(yummyBox);
+
+
+      }
+
       //errore da controllare il this.$.display
       //this.$.display.appendChild(childrow);
   }
@@ -120,22 +137,6 @@ class Chat extends HTMLElement {
         button2.addEventListener('click', this.clickButton.bind(this, '1', button1, button2, button3, button4));
         button3.addEventListener('click', this.clickButton.bind(this, '2', button1, button2, button3, button4));
         button4.addEventListener('click', this.clickButton.bind(this, '3', button1, button2, button3, button4));
-        //button1.addEventListener("click", clickButton('0'));
-        /*button2.setAttribute("on-tap", this.clickButton('1'));
-        button3.setAttribute("on-tap", this.clickButton('2'));
-        button4.setAttribute("on-tap", this.clickButton('3'));*/
-        //utton1.onclick = this.childRequest("in bagno");
-
-        //button1.setAttribute("onclick", "clickButton();");
-      /*  button2.onclick = function(){
-          this.childRequest("davanti alla porta")
-        }
-        button3.onclick = function(){
-          childRequest("in cucina");
-        }
-        button4.onclick = function(){
-          childRequest("sul divano");
-        }*/
 
         var img1 = document.createElement("IMG");
         var img2 = document.createElement("IMG");
@@ -187,10 +188,9 @@ class Chat extends HTMLElement {
         yummyavatar.appendChild(img);
         yummyrow.appendChild(yummyavatar);
         yummyrow.appendChild(yummymsg);
-        //errore da controllare
-        //this.$.display.appendChild(yummyrow);
+
         console.log(yummyrow);
-  //PORCO IL CLERO FUNZIONA!
+
         this.appendChild(yummyrow);
       }
   }
@@ -228,6 +228,14 @@ class Chat extends HTMLElement {
       console.log("entrato");
 
     }
+  }
+
+  playAudio(button) {
+    var audio = new Audio('images/dogsOutShort.mp3');
+      audio.play();
+      button.disabled = true;
+      button.remove();
+
   }
 
   childRequest(text) {
