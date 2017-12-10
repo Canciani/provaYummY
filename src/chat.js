@@ -43,7 +43,7 @@ class Chat extends HTMLElement {
         button1.setAttribute("class", "dog");
         button1.addEventListener('click', this.playAudio.bind(this, button1));
         var img1 = document.createElement("IMG");
-        img1.setAttribute("src", "images/dog6.png");
+        img1.setAttribute("src", "images/dog6M.png");
         img1.setAttribute("class", "dimension");
         button1.appendChild(img1);
         yummyBox.appendChild(button1);
