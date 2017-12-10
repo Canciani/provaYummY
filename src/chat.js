@@ -115,7 +115,12 @@ class Chat extends HTMLElement {
         button3.setAttribute("class", "dog");
         button4.setAttribute("class", "dog");
 
-        button1.setAttribute("onclick", this.clickButton('0'));
+        //button1.setAttribute("id", "bath");
+        button1.addEventListener('click', this.clickButton.bind(this, '0'));
+        button2.addEventListener('click', this.clickButton.bind(this, '1'));
+        button3.addEventListener('click', this.clickButton.bind(this, '2'));
+        button4.addEventListener('click', this.clickButton.bind(this, '3'));
+        //button1.addEventListener("click", clickButton('0'));
         /*button2.setAttribute("on-tap", this.clickButton('1'));
         button3.setAttribute("on-tap", this.clickButton('2'));
         button4.setAttribute("on-tap", this.clickButton('3'));*/
