@@ -62,6 +62,7 @@ class Chat extends HTMLElement {
       //creo html
       //creo la riga yummy;
 
+
       if(messages != "Dove si trova il cane? (abbaia)" && messages != "Ciao!" && messages != "Buongiorno!"){
         var yummyrow  = document.createElement("div");
         yummyrow.setAttribute("class", "rowsx");

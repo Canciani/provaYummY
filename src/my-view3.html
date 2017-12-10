@@ -203,6 +203,14 @@
         height: 50px;
       }
 
+      img.typing{
+        width: 88.88px;
+        height: 39.33px;
+        margin-right: 30%;
+        margin-bottom: 60px;
+        visibility: hidden;
+      }
+
     </style>
     <!-- CHAT -->
     <div class="container">
@@ -219,12 +227,14 @@
       </div>
       <div id="textarea" class="avatar container">
           <textarea id="request" class="avatar" placeholder="Type text here"></textarea>
+          <img class="typing" id="typingMoon" alt="" src = "images/MoonTyping.gif">
       </div>
       <div id="button" class="avatar half container">
           <!--input id="myBtn" class="avatar" type=”button” value="Send" onclick="myFunction()"/-->
           <button id="myBtn" class="avatar" type=”button” on-tap="handleTap"><iron-icon icon="myicons:send"></iron-icon></button>
       </div>
     </div>
+
 
 <!--
     <button id="dog" class="dog" type="button" on-tap=""><img alt="" src="images/DogEating.png" width="60px" height="60px"></button>
@@ -264,8 +274,16 @@
           //alert("appendChildMessages invocata");
           //creo la riga yummy;
           //risposta YummY
+          this.$.typingMoon.style.visibility = "visible";
+          var vis = this.$.typingMoon;
+          var cRequest = this.$.chat1;
+          var text = this.$.request.value;
 
-          this.$.chat1.childRequest(this.$.request.value);
+          setTimeout(function(){
+            vis.style.visibility = "hidden";
+            cRequest.childRequest(text);
+          }, 2000);
+
 
 
 
