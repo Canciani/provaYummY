@@ -6,6 +6,8 @@
 
 <link rel="import" href="shared-styles.html">
 <link rel="import" href="/src/myicons.html">
+<!--<script type="text/javascript" src="/src/dataY.json"></script>-->
+<!--<link rel="import" type="text/javascript" href="/src/data.json">-->
 
 <!--
 <link rel="import" href="/dialogFlow/webApp.js">
@@ -283,6 +285,15 @@
             vis.style.visibility = "hidden";
             cRequest.childRequest(text);
           }, 1500);
+          //INSERIMENTO JSON E VARIABILI
+          var request = new XMLHttpRequest();
+          request.open("GET", "/src/data.json", false);
+          request.send(null);
+          var dataJson = JSON.parse(request.responseText);
+          console.log(dataJson.childName);
+
+          //var fileJs = JSON.parse();
+          //console.log(fileJs);
 
           //alert("childRequest invocata");
           //PROVA INTERAZIONE CON YUMMY

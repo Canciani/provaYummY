@@ -35,6 +35,8 @@ class Chat extends HTMLElement {
 //PORCO IL CLERO FUNZIONA!
       this.appendChild(childrow);
 
+      this.scrollTop = this.scrollHeight;
+
       if(messages == "il cane abbaia"){
 
         var yummyBox = document.createElement("div");
@@ -195,7 +197,9 @@ class Chat extends HTMLElement {
 
         this.appendChild(yummyrow);
       }
+
       this.scrollTop = this.scrollHeight;
+
   }
 
   clickButton(type, bt1, bt2, bt3, bt4){
