@@ -48,6 +48,7 @@ class Chat extends HTMLElement {
         button1.appendChild(img1);
         yummyBox.appendChild(button1);
         this.appendChild(yummyBox);
+        this.scrollTop = this.scrollHeight;
 
 
       }
@@ -194,6 +195,7 @@ class Chat extends HTMLElement {
 
         this.appendChild(yummyrow);
       }
+      this.scrollTop = this.scrollHeight;
   }
 
   clickButton(type, bt1, bt2, bt3, bt4){
