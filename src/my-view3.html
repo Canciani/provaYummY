@@ -168,11 +168,30 @@
         margin-left: 60%;
       }
 
+      div.subtitle {
+	      font-family: Tahoma, sans-serif;
+        background-color: #fff;
+        border-radius: 20px;
+        height: 30px;
+        width: 80px;
+        border: none;
+        color: #eb9712;
+        box-shadow: 0 4px 25px 0 rgba(0, 0, 0, 0.1);
+        text-align: center;
+        font-size: 15px;
+        padding-top: 10px;
+        margin: 3px;
+      }
+
       .paddingtesto{
         padding-top: 12.5px;
         padding-bottom: 12.5px;
         padding-left: 25px;
         padding-right: 25px;
+      }
+
+      .paddingSubtitle{
+        text-align: center;
       }
 
       .dim{
@@ -205,6 +224,11 @@
         height: 50px;
       }
 
+      img.dubt{
+        width: 150px;
+        height: 150px;
+      }
+
       img.dimCong{
         width: 200px;
         height: 200px;
@@ -216,6 +240,17 @@
         margin-right: 30%;
         margin-bottom: 60px;
         visibility: hidden;
+      }
+      img.path {
+        height: 272px;
+        width: 598px;
+      }
+
+      @media screen and (max-width: 480px) {
+        img.path {
+          height: 163px;
+          width: 359px;
+        }
       }
 
     </style>
@@ -233,7 +268,7 @@
         </div>
       </div>
       <div id="textarea" class="avatar container">
-          <textarea id="request" class="avatar" placeholder="Type text here"></textarea>
+          <textarea id="request" class="avatar" placeholder="Scrivi qui"></textarea>
           <img class="typing" id="typingMoon" alt="" src = "images/MoonTyping.gif">
       </div>
       <div id="button" class="avatar half container">
