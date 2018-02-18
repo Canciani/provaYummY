@@ -84,7 +84,18 @@ class Chat extends HTMLElement {
         yummytext.setAttribute("class", "paddingtesto");
 
         //append
-        yummytext.innerHTML = messages;
+        //sostituisce la parola il cane con il nome del cagnolino
+        /*
+        if(localStorage.dogName){
+          var str = messages;
+          var dogName = localStorage.dogName
+          var res = str.replace("il cane", dogName);
+          yummytext.innerHTML = res;
+        }else{
+          yummytext.innerHTML = messages;
+        }*/
+        //Substitute the element with the localStorage
+        yummytext.innerHTML = this.stringSubstitution(messages);
         yummymsg.appendChild(yummytext);
         yummyavatar.appendChild(img);
         yummyrow.appendChild(yummyavatar);
@@ -195,7 +206,16 @@ class Chat extends HTMLElement {
         yummytext.setAttribute("class", "paddingtesto");
 
         //append
-        yummytext.innerHTML = messages;
+        if(localStorage.name){
+          var str = messages;
+          var name = localStorage.name
+          var res = str.replace("*", name);
+          yummytext.innerHTML = res;
+        }else{
+          var str = messages.replace("*", "");
+          yummytext.innerHTML = str;
+        }
+        //yummytext.innerHTML = messages;
         yummymsg.appendChild(yummytext);
         yummyavatar.appendChild(img);
         yummyrow.appendChild(yummyavatar);
@@ -237,7 +257,7 @@ class Chat extends HTMLElement {
           yummytext1.setAttribute("class", "paddingtesto");
 
           //append
-          yummytext1.innerHTML = messages;
+          yummytext1.innerHTML = this.stringSubstitution(messages);
           yummymsg1.appendChild(yummytext1);
           yummyavatar1.appendChild(img1);
           yummyrow1.appendChild(yummyavatar1);
@@ -318,7 +338,7 @@ class Chat extends HTMLElement {
           yummytext.setAttribute("class", "paddingtesto");
 
           //append
-          yummytext.innerHTML = messages;
+          yummytext.innerHTML = this.stringSubstitution(messages);
           yummymsg.appendChild(yummytext);
           yummyavatar.appendChild(img);
           yummyrow.appendChild(yummyavatar);
@@ -431,7 +451,7 @@ class Chat extends HTMLElement {
             yummytext.setAttribute("class", "paddingtesto");
 
             //append
-            yummytext.innerHTML = messages;
+            yummytext.innerHTML = this.stringSubstitution(messages);
             yummymsg.appendChild(yummytext);
             yummyavatar.appendChild(img);
             yummyrow.appendChild(yummyavatar);
@@ -587,6 +607,19 @@ class Chat extends HTMLElement {
     } else {
         console.log("Sorry, your browser does not support web storage...");
     }
+  }
+
+  stringSubstitution(messages) {
+    if(messages.includes('il cane')){
+      var str = messages;
+      if(localStorage.dogName){
+        var dogName = localStorage.dogName
+        var str = str.replace("il cane", dogName);
+      }
+    }else{
+      var str = messages;
+    }
+    return str;
   }
 
 }

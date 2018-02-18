@@ -112,9 +112,10 @@
     <!-- FORM NAME AND DOG -->
     <div class="container">
       <font class="bomb" id="title">YummY</font>
-      <form class="container" action="view3">
+      <!--CLicclato il pulsante invia i dati verranno inviati alla pagina view3-->
+      <form class="container" action="view3" onsubmit="greeting()">
         <div id="name" class="name container">
-          <input class="name" type="text" placeholder="Inserisci il tuo nome" >
+          <input id="prova" class="name" type="text" placeholder="Inserisci il tuo nome" >
         </div>
         <div id="dogName" class="dog container">
           <img class="dog" alt="" src="/images/dogInput.png">
@@ -129,9 +130,10 @@
 
   <script>
   //PARTE NON UTILIZZATA
+  /*
     Polymer({
       is: 'my-view1',
-
+      /*
       handleTap: function() {
         if(this.$.request.value!=""){
         //Invio del dato a dialogFlow
@@ -153,18 +155,29 @@
           /*
           var btn  = document.createElement("div");
           btn.innerHTML = "prova";
-          this.$.prova.appendChild(btn);*/
+          this.$.prova.appendChild(btn);
 
         }
       }
 
-    });
-
-
+    });*/
     class MyView1 extends Polymer.Element {
       static get is() { return 'my-view1'; }
     }
 
     window.customElements.define(MyView1.is, MyView1);
+  </script>
+
+  <script>
+  function greeting(){
+    //Cercare di prendere i dati che compaiono nel campo textField
+    alert("Entrato");
+    /*
+    var value = document.getElementById("prova").value;
+    alert(value);*/
+    localStorage.setItem("name", "Francesco");
+    localStorage.setItem("dogName", "Fuffy");
+    //console.log("value");
+  }
   </script>
 </dom-module>
