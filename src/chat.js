@@ -248,13 +248,20 @@ class Chat extends HTMLElement {
           this.scrollTop = this.scrollHeight;
 
         }else if(actions == "Premio"){
-
+          this.trophyCount();
           var yummyBox = document.createElement("div");
           yummyBox.setAttribute("class", "container");
 
           var img1 = document.createElement("IMG");
-
-          img1.setAttribute("src", "images/TrofeoUno.png");
+          if(localStorage.trophy == 1){
+            img1.setAttribute("src", "images/TrofeoUno.png");
+          }else if(localStorage.trophy == 2){
+            img1.setAttribute("src", "images/TrofeoDue.png");
+          }else if(localStorage.trophy == 3){
+            img1.setAttribute("src", "images/TrofeoTre.png");
+          }else{
+            img1.setAttribute("src", "images/TrofeoQuattro.png");
+          }
 
           img1.setAttribute("class", "dimCong");
 
@@ -265,14 +272,32 @@ class Chat extends HTMLElement {
           yummyPath.setAttribute("class", "container");
 
           var img2 = document.createElement("IMG");
-
-          img2.setAttribute("src", "images/Uno.png");
+          if(localStorage.trophy == 1){
+            img2.setAttribute("src", "images/Uno.png");
+            var audio = new Audio('audio/firstWin.mp3');
+            audio.play();
+          }else if(localStorage.trophy == 2){
+            img2.setAttribute("src", "images/Due.png");
+            var audio = new Audio('audio/secondWin.mp3');
+            audio.play();
+          }else if(localStorage.trophy == 3){
+            img2.setAttribute("src", "images/Tre.png");
+            var audio = new Audio('audio/firstWin.mp3');
+            audio.play();
+          }else{
+            img2.setAttribute("src", "images/Quattro.png");
+            var audio = new Audio('audio/secondWin.mp3');
+            audio.play();
+          }
 
           img2.setAttribute("class", "path");
 
           yummyPath.appendChild(img2);
 
           this.appendChild(yummyPath);
+
+          //invoco il metodo del conteggio dei trofei
+
           this.scrollTop = this.scrollHeight;
         }else if(actions == "Comportamento"){
 
@@ -533,7 +558,7 @@ class Chat extends HTMLElement {
   }
 
   playAudio(button) {
-    var audio = new Audio('images/dogsOutShort.mp3');
+    var audio = new Audio('audio/dogsOutShort.mp3');
       audio.play();
       button.disabled = true;
       button.remove();
@@ -547,6 +572,21 @@ class Chat extends HTMLElement {
         .then(this.handleResponse.bind(this))
         .catch(this.handleError);
 
+  }
+
+  trophyCount() {
+    //localStorage.setItem("trophy", "0");
+    //localStorage.removeItem("trophy");
+    if(typeof(Storage) !== "undefined") {
+        if (localStorage.trophy) {
+            localStorage.trophy = Number(localStorage.trophy)+1;
+        } else {
+            localStorage.trophy = 1;
+        }
+        console.log(localStorage.trophy);
+    } else {
+        console.log("Sorry, your browser does not support web storage...");
+    }
   }
 
 }

@@ -201,8 +201,26 @@
 
     </style>
     <div class="container pos">
-    <img class="planet" src="../images/Zero.png" alt="planet">
+    <img id="victoryPath" class="planet" src="../images/Zero.png" alt="planet"/>
     </div>
+
+    <script>
+        if (localStorage.trophy) {
+          if(localStorage.trophy == 0){
+             document.getElementById("victoryPath").src = "../images/Zero.jpg";
+          }else if(localStorage.trophy == 1){
+             document.getElementById("victoryPath").src = "../images/Uno.jpg";
+          }else if(localStorage.trophy == 2){
+             document.getElementById("victoryPath").src = "../images/Due.jpg";
+          }else if(localStorage.trophy == 3){
+             document.getElementById("victoryPath").src = "../images/Tre.jpg";
+          }else{
+            document.getElementById("victoryPath").src = "../images/Quattro.jpg";
+          }
+        }else{
+          localStorage.trophy = 0;
+        }
+    </script>
 
 <!--
     <div class="container">
