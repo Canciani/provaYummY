@@ -323,6 +323,15 @@
           var cRequest = this.$.chat1;
           var text = this.$.request.value;
 
+          //Change "dogName" with "il cane"
+
+          if(localStorage.dogName){
+            if(text.includes(localStorage.dogName)){
+              var dogName = localStorage.dogName
+              text = text.replace(dogName, "il cane");
+            }
+          }
+
           setTimeout(function(){
             vis.style.visibility = "hidden";
             cRequest.childRequest(text);

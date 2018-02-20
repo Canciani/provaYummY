@@ -496,7 +496,7 @@ class Chat extends HTMLElement {
       sub4.remove();
       break;
     case '1':
-      this.childRequest("davanti alla porta");
+      this.childRequest("porta");
       bt1.remove();
       bt2.disabled = true;
       bt3.remove();
@@ -516,7 +516,7 @@ class Chat extends HTMLElement {
       sub4.remove();
       break;
     case '3':
-      this.childRequest("sul divano");
+      this.childRequest("in sala");
       bt1.remove();
       bt2.remove();
       bt3.remove();
@@ -620,6 +620,21 @@ class Chat extends HTMLElement {
       var str = messages;
     }
     return str;
+  }
+
+  stringSubsDialogFlow(messages) {
+    if(localStorage.dogName){
+      if(messages.includes(localStorage.dogName)){
+        var str = messages;
+        var dogName = localStorage.dogName
+        var str = str.replace(dogName, "il cane");
+      }else{
+        var str = messages;
+      }
+      return str;
+    }else{
+      return messages;
+    }
   }
 
 }
