@@ -113,16 +113,16 @@
     <div class="container">
       <font class="bomb" id="title">YummY</font>
       <!--CLicclato il pulsante invia i dati verranno inviati alla pagina view3-->
-      <form class="container" action="view3" onsubmit="greeting()">
+      <form class="container" action="view3">
         <div id="name" class="name container">
-          <input id="prova" class="name" type="text" placeholder="Inserisci il tuo nome" >
+          <input id="nameChild" class="name" type="text" placeholder="Inserisci il tuo nome">
         </div>
         <div id="dogName" class="dog container">
           <img class="dog" alt="" src="/images/dogInput.png">
-          <input class="dogName" type="text" placeholder="Nome cagnolino">
+          <input id="nameDog" class="dogName" type="text" placeholder="Nome cagnolino">
         </div>
         <div id="insertion1" class="insertion container">
-          <input class="insert" type="submit" value="Invia">
+          <input class="insert" type="submit" value="Invia" on-tap="subm">
         </div>
       </form>
     </div>
@@ -130,54 +130,41 @@
 
   <script>
   //PARTE NON UTILIZZATA
-  /*
+
     Polymer({
       is: 'my-view1',
-      /*
-      handleTap: function() {
-        if(this.$.request.value!=""){
-        //Invio del dato a dialogFlow
-          alert(this.$.request.value);
-        //Sistemazione dello schermo aggiungere che viene applicato solamente
-        //la prima volta
-        //JS possiamo utilizzare DOCUMENT PER LE COSE CHE CREI
-          this.$.yummy.remove();
-          this.$.textarea.style.bottom = '50px';
-          this.$.button.style.bottom = '50px';
-
-          var addElem  = document.createElement("div");
-          addElem.innerHTML = this.$.request.value;
-          this.$.prova.appendChild(addElem);
-
-          this.$.request.value = "";
-          this.$.secondaryColor.remove();
-          this.$.title.remove();
-          /*
-          var btn  = document.createElement("div");
-          btn.innerHTML = "prova";
-          this.$.prova.appendChild(btn);
-
-        }
+      subm: function(){
+        var childName = this.$.nameChild.value;//document.querySelector('#prova').value //document.getElementById("prova").value;
+        var dogName = this.$.nameDog.value;
+        localStorage.setItem("name", childName);
+        localStorage.setItem("dogName", dogName);
+        localStorage.setItem("trophy", "0");
       }
+    });
 
-    });*/
     class MyView1 extends Polymer.Element {
       static get is() { return 'my-view1'; }
     }
 
-    window.customElements.define(MyView1.is, MyView1);
+    //window.customElements.define(MyView1.is, MyView1);
   </script>
-
+<!--
+// SENZA L'UTILIZZO DI POLYMER
   <script>
   function greeting(){
     //Cercare di prendere i dati che compaiono nel campo textField
     alert("Entrato");
-    /*
-    var value = document.getElementById("prova").value;
-    alert(value);*/
+    /*Bisogna riuscire a far partire la chiamata a funzione una volta che
+     l'elemento viene caricato*/
+    //var value1 = document.getElementById("dogName").value;
+
+    var value = this.$.prova.value//document.querySelector('#prova').value //document.getElementById("prova").value;
+    alert(value);
+
     localStorage.setItem("name", "Francesco");
-    localStorage.setItem("dogName", "Fuffy");
+    localStorage.setItem("dogName", "Scheggia");
     //console.log("value");
   }
-  </script>
+</script>-->
+
 </dom-module>

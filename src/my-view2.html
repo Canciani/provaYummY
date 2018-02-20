@@ -177,20 +177,33 @@
         width: 100%;
       }
       img.planet {
-        height: 375px;
-        width: 861px;
+        height: 408px;
+        width: 897px;
       }
       @media screen and (max-width: 480px) {
         img.planet {
           height: 163px;
           width: 359px;
         }
+      }
+      @media screen and (min-width: 769px) and (max-width: 1024px) {
+        img.planet {
+          height: 314px;
+          width: 690px;
+        }
+      }
+      @media screen and (min-width: 768px) and (max-width: 1023px) {
+        img.planet {
+          height: 218px;
+          width: 479px;
+        }
+      }
         div.pos{
           position: absolute;
           bottom: 30%;
           width: 100%;
         }
-      }
+
 /*
       @media screen and (max-width: 1024px){
         img.planet {
@@ -201,27 +214,11 @@
 
     </style>
     <div class="container pos">
-    <img id="victoryPath" class="planet" src="../images/Zero.png" alt="planet"/>
+    <img id="victoryPath" class="planet" src="../images/Zero.png" alt="planet" on-tap="check"/>
     </div>
     <!--Far si che venga caricato solamente quando l'intera pagina è
     stata caricata-->
-    <script>
-        if (localStorage.trophy) {
-          if(localStorage.trophy == 0){
-             document.getElementById("victoryPath").src = "../images/Zero.jpg";
-          }else if(localStorage.trophy == 1){
-             document.getElementById("victoryPath").src = "../images/Uno.jpg";
-          }else if(localStorage.trophy == 2){
-             document.getElementById("victoryPath").src = "../images/Due.jpg";
-          }else if(localStorage.trophy == 3){
-             document.getElementById("victoryPath").src = "../images/Tre.jpg";
-          }else{
-            document.getElementById("victoryPath").src = "../images/Quattro.jpg";
-          }
-        }else{
-          localStorage.trophy = 0;
-        }
-    </script>
+
 
 <!--
     <div class="container">
@@ -237,10 +234,47 @@
   </template>
 
   <script>
+  Polymer({
+    is: 'my-view2',
+    check: function(){
+      if (localStorage.trophy) {
+        if(localStorage.trophy == 0){
+          this.$.victoryPath.src = "../images/Zero.png";
+           //document.getElementById("victoryPath").src = "../images/Zero.jpg";
+        }else if(localStorage.trophy == 1){
+          this.$.victoryPath.src = "../images/Uno.png";
+          var audio = new Audio('audio/secondWin.mp3');
+          audio.play();
+           //document.getElementById("victoryPath").src = "../images/Uno.jpg";
+        }else if(localStorage.trophy == 2){
+          this.$.victoryPath.src = "../images/Due.png";
+          var audio = new Audio('audio/firstWin.mp3');
+          audio.play();
+           //document.getElementById("victoryPath").src = "../images/Due.jpg";
+        }else if(localStorage.trophy == 3){
+          this.$.victoryPath.src = "../images/Tre.png";
+          var audio = new Audio('audio/secondWin.mp3');
+          audio.play();
+           //document.getElementById("victoryPath").src = "../images/Tre.jpg";
+        }else{
+          this.$.victoryPath.src = "../images/Quattro.png";
+          var audio = new Audio('audio/firstWin.mp3');
+          audio.play();
+          //Polymer.dom(this.).querySelector("#victoryPath")
+          //document.querySelector('#victoryPath').value
+          //document.getElementById("victoryPath").src = "../images/Quattro.jpg";
+        }
+      }else{
+        this.$.victoryPath.src = "../images/Zero.png";
+        localStorage.trophy = 0;
+      }
+    }
+  });
+
     class MyView2 extends Polymer.Element {
       static get is() { return 'my-view2'; }
     }
-    window.customElements.define(MyView2.is, MyView2);
+    //window.customElements.define(MyView2.is, MyView2);
   </script>
 
 </dom-module>
